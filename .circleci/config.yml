@@ -1,6 +1,4 @@
-﻿version: 2.1
-orbs:
-  node: circleci/node@5.1.0
+version: 2.1
 
 jobs:
   test:
@@ -8,17 +6,15 @@ jobs:
       - image: mcr.microsoft.com/playwright:v1.44.0-jammy
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: npm
+      - run:
+          name: Install dependencies
+          command: npm install
       - run:
           name: Install Playwright browsers
           command: npx playwright install --with-deps chromium
       - run:
-          name: Start server and run tests
-          command: |
-            npx serve . -p 8080 &
-            sleep 3
-            npx playwright test
+          name: Run tests
+          command: npx playwright test --config pw.config.js
       - store_artifacts:
           path: playwright-report
           destination: playwright-report
