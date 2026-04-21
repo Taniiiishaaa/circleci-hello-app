@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello App</title>
+  <style>
+    body { font-family: sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #0d0d0d; color: #f0f0f0; }
+    .card { text-align: center; padding: 3rem; border: 1px solid #333; border-radius: 16px; }
+    button { background: #e8ff47; color: #000; border: none; padding: 0.85rem 2rem; font-size: 1rem; font-weight: bold; border-radius: 8px; cursor: pointer; }
+    #message { margin-top: 1.5rem; color: #e8ff47; opacity: 0; transition: opacity 0.4s; min-height: 1.5em; }
+    #message.visible { opacity: 1; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Hello, World.</h1>
+    <button id="reveal-btn" onclick="showMessage()">Click Me</button>
+    <p id="message">🎉 It works! CI pipeline is green.</p>
+  </div>
+  <script>
+    function showMessage() {
+      document.getElementById('message').classList.add('visible');
+    }
+  </script>
+</body>
+</html>

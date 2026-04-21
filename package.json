@@ -1,0 +1,11 @@
+﻿{
+  "name": "circleci-hello-app",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "serve": "^14.2.0"
+  }
+}
